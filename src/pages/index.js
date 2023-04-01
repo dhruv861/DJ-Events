@@ -31,6 +31,5 @@ export async function getStaticProps() {
 
   return {
     props: { events: events.data },
-    revailidate: 1,
   };
 }

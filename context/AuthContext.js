@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const router = useRouter();
 
-  useEffect(() => checkUserLoggedIn(), []);
+  useEffect(() => checkUserLoggedIn, []);
 
   // Register user
   const register = async (user) => {
@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
 
   // Login user
   const login = async ({ email: identifier, password }) => {
+    console.log(identifier, password);
     const res = await fetch(`${NEXT_URL}/api/login`, {
       method: "POST",
       headers: {
